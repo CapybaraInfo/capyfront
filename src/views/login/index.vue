@@ -12,11 +12,12 @@ import { bg, avatar, illustration } from "./utils/static";
 import { useRenderIcon } from "@/components/ReIcon/src/hooks";
 import { ref, reactive, toRaw, onMounted, onBeforeUnmount } from "vue";
 import { useDataThemeChange } from "@/layout/hooks/useDataThemeChange";
-
+import { ReImageVerify } from "@/components/ReImageVerify";
 import dayIcon from "@/assets/svg/day.svg?component";
 import darkIcon from "@/assets/svg/dark.svg?component";
 import Lock from "@iconify-icons/ri/lock-fill";
 import User from "@iconify-icons/ri/user-3-fill";
+import { watch } from "vue";
 
 defineOptions({
   name: "Login"
@@ -24,6 +25,7 @@ defineOptions({
 const router = useRouter();
 const loading = ref(false);
 const ruleFormRef = ref<FormInstance>();
+const imgCode = ref("");
 
 const { initStorage } = useLayout();
 initStorage();
@@ -34,7 +36,12 @@ const { title } = useNav();
 
 const ruleForm = reactive({
   username: "admin",
-  password: "admin123"
+  password: "admin123",
+  verifyCode: ""
+});
+
+watch(imgCode, value => {
+  useUserStoreHook().SET_VERIFYCODE(value);
 });
 
 const onLogin = async (formEl: FormInstance | undefined) => {
@@ -79,7 +86,6 @@ onBeforeUnmount(() => {
 
 <template>
   <div class="select-none">
-    <img :src="bg" class="wave" />
     <div class="flex-c absolute right-5 top-3">
       <!-- 主题 -->
       <el-switch
@@ -98,7 +104,7 @@ onBeforeUnmount(() => {
         <div class="login-form">
           <avatar class="avatar" />
           <Motion>
-            <h2 class="outline-none">{{ title }}</h2>
+            <h2 class="outline-none">Capy Consultório</h2>
           </Motion>
 
           <el-form
@@ -138,7 +144,20 @@ onBeforeUnmount(() => {
                 />
               </el-form-item>
             </Motion>
-
+            <Motion :delay="200">
+              <el-form-item prop="verifyCode">
+                <el-input
+                  v-model="ruleForm.verifyCode"
+                  clearable
+                  :placeholder="'Código de segurança'"
+                  :prefix-icon="useRenderIcon('ri:shield-keyhole-line')"
+                >
+                  <template v-slot:append>
+                    <ReImageVerify v-model:code="imgCode" />
+                  </template>
+                </el-input>
+              </el-form-item>
+            </Motion>
             <Motion :delay="250">
               <el-button
                 class="w-full mt-4"

@@ -33,7 +33,9 @@ export function useDataThemeChange() {
     /* 绿宝石 */
     { color: "#13c2c2", themeColor: "mingQing" },
     /* 酸橙绿 */
-    { color: "#52c41a", themeColor: "auroraGreen" }
+    { color: "#52c41a", themeColor: "auroraGreen" },
+    { color: "#517A3B", themeColor: "capy" },
+
   ]);
 
   const { $storage } = useGlobal<GlobalPropertiesApi>();
@@ -50,7 +52,7 @@ export function useDataThemeChange() {
 
   /** 设置导航主题色 */
   function setLayoutThemeColor(
-    theme = getConfig().Theme ?? "light",
+    theme = getConfig().Theme ?? "capy",
     isClick = true
   ) {
     layoutTheme.value.theme = theme;

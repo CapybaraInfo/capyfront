@@ -17,6 +17,18 @@
   padding: 0 2rem;
 }
 
+.login-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #517a3b;
+  clip-path: polygon(0 0, 40% 0, 55% 100%, 0 100%);
+  z-index: -1;
+}
+
 .img {
   display: flex;
   justify-content: flex-end;

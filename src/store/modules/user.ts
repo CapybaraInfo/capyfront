@@ -27,6 +27,8 @@ export const useUserStore = defineStore({
     nickname: storageLocal().getItem<DataInfo<number>>(userKey)?.nickname ?? "",
     // 页面级别权限
     roles: storageLocal().getItem<DataInfo<number>>(userKey)?.roles ?? [],
+
+    verifyCode: "",
     // 是否勾选了登录页的免登录
     isRemembered: false,
     // 登录页的免登录存储几天，默认7天
@@ -56,6 +58,9 @@ export const useUserStore = defineStore({
     /** 设置登录页的免登录存储几天 */
     SET_LOGINDAY(value: number) {
       this.loginDay = Number(value);
+    },
+    SET_VERIFYCODE(verifyCode: string) {
+      this.verifyCode = verifyCode;
     },
     /** 登入 */
     async loginByUsername(data) {

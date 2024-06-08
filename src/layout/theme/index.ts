@@ -101,7 +101,18 @@ const themeColors = {
     sidebarLogo: "#112f21",
     menuTitleHover: "#fff",
     menuActiveBefore: "#60ac80"
-  }
+  },
+  capy: {
+    subMenuActiveText: "#000000d9",
+    menuBg: "#fff",
+    menuHover: "#f6f6f6",
+    subMenuBg: "#fff",
+    subMenuActiveBg: "#e0ebf6",
+    menuText: "rgb(0 0 0 / 60%)",
+    sidebarLogo: "#fff",
+    menuTitleHover: "#000",
+    menuActiveBefore: "#4091f7"
+  },
 };
 
 /**

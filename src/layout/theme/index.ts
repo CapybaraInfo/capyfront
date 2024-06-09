@@ -23,7 +23,7 @@ const themeColors = {
     subMenuActiveText: "#fff",
     menuBg: "#001529",
     menuHover: "rgb(64 145 247 / 15%)",
-    subMenuBg: "#0f0303",
+    subMenuBg: "#0d0d0d",
     subMenuActiveBg: "#4091f7",
     menuText: "rgb(254 254 254 / 65%)",
     sidebarLogo: "#002140",
@@ -103,7 +103,7 @@ const themeColors = {
     menuActiveBefore: "#60ac80"
   },
   capy: {
-    subMenuActiveText: "#7CA267",
+    subMenuActiveText: "#000000d9",
     menuBg: "#fff",
     menuHover: "#f6f6f6",
     subMenuBg: "#fff",

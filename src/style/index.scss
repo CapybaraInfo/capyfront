@@ -13,9 +13,7 @@
 
   /* switch关闭状态下的color 需要时可取用 */
   --pure-switch-off-color: #a6a6a6;
-
 }
-
 
 /* 灰色模式 */
 .html-grey {
@@ -25,4 +23,13 @@
 /* 色弱模式 */
 .html-weakness {
   filter: invert(80%);
+}
+.card-header {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.el-form--inline.el-form--label-top {
+  align-items: end;
 }

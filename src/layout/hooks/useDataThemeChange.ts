@@ -19,7 +19,7 @@ export function useDataThemeChange() {
   const { layoutTheme, layout } = useLayout();
   const themeColors = ref<Array<themeColorsType>>([
     /* 亮白色 */
-    { color: "#ffffff", themeColor: "light" },
+    { color: "#517A3B", themeColor: "light" },
     /* 道奇蓝 */
     { color: "#1b2a47", themeColor: "default" },
     /* 深紫罗兰色 */
@@ -34,6 +34,7 @@ export function useDataThemeChange() {
     { color: "#13c2c2", themeColor: "mingQing" },
     /* 酸橙绿 */
     { color: "#52c41a", themeColor: "auroraGreen" },
+
     { color: "#517A3B", themeColor: "capy" },
 
   ]);
@@ -52,7 +53,7 @@ export function useDataThemeChange() {
 
   /** 设置导航主题色 */
   function setLayoutThemeColor(
-    theme = getConfig().Theme ?? "capy",
+    theme = getConfig().Theme ?? "light",
     isClick = true
   ) {
     layoutTheme.value.theme = theme;

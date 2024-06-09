@@ -53,14 +53,13 @@ const onLogin = async (formEl: FormInstance | undefined) => {
         .loginByUsername({ username: ruleForm.username, password: "admin123" })
         .then(res => {
           if (res.success) {
-            // 获取后端路由
             return initRouter().then(() => {
               router.push(getTopMenu(true).path).then(() => {
-                message("登录成功", { type: "success" });
+                message("Autenticado com sucesso!", { type: "success" });
               });
             });
           } else {
-            message("登录失败", { type: "error" });
+            message("Credenciais inválidas", { type: "error" });
           }
         })
         .finally(() => (loading.value = false));
@@ -68,7 +67,6 @@ const onLogin = async (formEl: FormInstance | undefined) => {
   });
 };
 
-/** 使用公共函数，避免`removeEventListener`失效 */
 function onkeypress({ code }: KeyboardEvent) {
   if (code === "Enter") {
     onLogin(ruleFormRef.value);
@@ -118,7 +116,7 @@ onBeforeUnmount(() => {
                 :rules="[
                   {
                     required: true,
-                    message: '请输入账号',
+                    message: 'Usuário inválido',
                     trigger: 'blur'
                   }
                 ]"
@@ -127,7 +125,7 @@ onBeforeUnmount(() => {
                 <el-input
                   v-model="ruleForm.username"
                   clearable
-                  placeholder="账号"
+                  placeholder="Usuário"
                   :prefix-icon="useRenderIcon(User)"
                 />
               </el-form-item>
@@ -139,7 +137,7 @@ onBeforeUnmount(() => {
                   v-model="ruleForm.password"
                   clearable
                   show-password
-                  placeholder="密码"
+                  placeholder="Senha"
                   :prefix-icon="useRenderIcon(Lock)"
                 />
               </el-form-item>
@@ -166,7 +164,7 @@ onBeforeUnmount(() => {
                 :loading="loading"
                 @click="onLogin(ruleFormRef)"
               >
-                登录
+                Entrar
               </el-button>
             </Motion>
           </el-form>

@@ -44,7 +44,7 @@ const toggleClick = () => {
   <div class="left-collapse">
     <IconifyIconOffline
       v-tippy="{
-        content: isActive ? '点击折叠' : '点击展开',
+        content: isActive ? 'Minimizar' : 'Expandir',
         theme: tooltipEffect,
         hideOnClick: 'toggle',
         placement: 'right'

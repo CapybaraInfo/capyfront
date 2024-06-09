@@ -103,7 +103,7 @@ const themeColors = {
     menuActiveBefore: "#60ac80"
   },
   capy: {
-    subMenuActiveText: "#000000d9",
+    subMenuActiveText: "#7CA267",
     menuBg: "#fff",
     menuHover: "#f6f6f6",
     subMenuBg: "#fff",

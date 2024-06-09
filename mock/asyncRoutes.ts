@@ -9,7 +9,7 @@ import { defineFakeRoute } from "vite-plugin-fake-server/client";
 const permissionRouter = {
   path: "/permission",
   meta: {
-    title: "权限管理",
+    title: "Permissionamento",
     icon: "ep:lollipop",
     rank: 10
   },
@@ -18,7 +18,7 @@ const permissionRouter = {
       path: "/permission/page/index",
       name: "PermissionPage",
       meta: {
-        title: "页面权限",
+        title: "Por página",
         roles: ["admin", "common"]
       }
     },
@@ -26,7 +26,7 @@ const permissionRouter = {
       path: "/permission/button/index",
       name: "PermissionButton",
       meta: {
-        title: "按钮权限",
+        title: "Por função",
         roles: ["admin", "common"],
         auths: [
           "permission:btn:add",
@@ -45,7 +45,7 @@ export default defineFakeRoute([
     response: () => {
       return {
         success: true,
-        data: [permissionRouter]
+        data: []
       };
     }
   }

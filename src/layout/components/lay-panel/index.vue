@@ -51,10 +51,10 @@ onBeforeUnmount(() => {
       <div
         class="project-configuration border-b-[1px] border-solid border-[var(--pure-border-color)]"
       >
-        <h4 class="dark:text-white">系统配置</h4>
+        <h4 class="dark:text-white">Configuração</h4>
         <span
           v-tippy="{
-            content: '关闭配置',
+            content: 'Configurar sistema',
             placement: 'bottom-start',
             zIndex: 41000
           }"
@@ -78,7 +78,7 @@ onBeforeUnmount(() => {
       >
         <el-button
           v-tippy="{
-            content: '清空缓存并返回登录页',
+            content: 'Resetar configurações',
             placement: 'left-start',
             zIndex: 41000
           }"
@@ -87,7 +87,7 @@ onBeforeUnmount(() => {
           bg
           @click="onReset"
         >
-          清空缓存
+          Limpar dados
         </el-button>
       </div>
     </div>
@@ -115,7 +115,7 @@ onBeforeUnmount(() => {
   right: 0;
   z-index: 40000;
   width: 100%;
-  max-width: 280px;
+  max-width: 310px;
   box-shadow: 0 0 15px 0 rgb(0 0 0 / 5%);
   transition: all 0.25s cubic-bezier(0.7, 0.3, 0.1, 1);
   transform: translate(100%);

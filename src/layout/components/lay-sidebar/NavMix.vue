@@ -110,7 +110,7 @@ watch(
                 :icon="LogoutCircleRLine"
                 style="margin: 5px"
               />
-              退出系统
+              Sair
             </el-dropdown-item>
           </el-dropdown-menu>
         </template>

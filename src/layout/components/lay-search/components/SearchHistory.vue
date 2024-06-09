@@ -141,7 +141,7 @@ defineExpose({ handleScroll });
 <template>
   <div ref="historyRef" class="history">
     <template v-if="historyList.length">
-      <div :style="titleStyle">搜索历史</div>
+      <div :style="titleStyle">Histórico de busca</div>
       <div
         v-for="(item, index) in historyList"
         :key="item.path"
@@ -160,7 +160,9 @@ defineExpose({ handleScroll });
     </template>
     <template v-if="collectList.length">
       <div :style="titleStyle">
-        {{ `收藏${collectList.length > 1 ? "（可拖拽排序）" : ""}` }}
+        {{
+          `Favoritos${collectList.length > 1 ? "(arraste para reordenar)" : ""}`
+        }}
       </div>
       <div class="collect-container">
         <div

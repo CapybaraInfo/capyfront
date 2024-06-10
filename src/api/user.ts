@@ -1,29 +1,31 @@
 import { http } from "@/utils/http";
 
 export type UserResult = {
-  success: boolean; data: {
-    /** 头像 */
-    avatar: string; /** 用户名 */
-    username: string; /** 昵称 */
-    nickname: string; /** 当前登录用户的角色 */
-    roles: Array<string>; /** `token` */
-    accessToken: string; /** 用于调用刷新`accessToken`的接口时所需的`token` */
-    refreshToken: string; /** `accessToken`的过期时间（格式'xxxx/xx/xx xx:xx:xx'） */
+  success: boolean;
+  data: {
+    avatar: string;
+    username: string;
+    nickname: string;
+    roles: Array<string>;
+    accessToken: string;
+    refreshToken: string;
     expires: Date;
   };
 };
 
 export type RefreshTokenResult = {
-  success: boolean; data: {
-    /** `token` */
-    accessToken: string; /** 用于调用刷新`accessToken`的接口时所需的`token` */
-    refreshToken: string; /** `accessToken`的过期时间（格式'xxxx/xx/xx xx:xx:xx'） */
+  success: boolean;
+  data: {
+    accessToken: string;
+    refreshToken: string;
     expires: Date;
   };
 };
 
 export type TokenResponse = {
-  readonly acessToken: string; readonly refreshToken: string; readonly userData: UserData;
+  readonly acessToken: string;
+  readonly refreshToken: string;
+  readonly userData: UserData;
 };
 
 export type UserData = {
@@ -45,13 +47,12 @@ export enum Role {
   STAFF = "STAFF"
 }
 
-/** 登录 */
 export const getLogin = async (data?: object): Promise<UserResult> => {
   const result = await http.request<TokenResponse>("post", "/api/login", {
     data
   });
   let jsonData = JSON.parse(atob(result.acessToken.split(".")[1]));
-  let exp =  jsonData.exp;
+  let exp = jsonData.exp;
   return {
     success: true,
     data: {
@@ -66,7 +67,6 @@ export const getLogin = async (data?: object): Promise<UserResult> => {
   };
 };
 
-/** 刷新`token` */
 export const refreshTokenApi = async (data?: {
   refreshToken: string;
 }): Promise<RefreshTokenResult> => {

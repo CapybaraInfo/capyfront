@@ -18,6 +18,7 @@ import darkIcon from "@/assets/svg/dark.svg?component";
 import Lock from "@iconify-icons/ri/lock-fill";
 import User from "@iconify-icons/ri/user-3-fill";
 import { watch } from "vue";
+import { UserResult } from "@/api/user";
 
 defineOptions({
   name: "Login"
@@ -35,8 +36,8 @@ dataThemeChange(overallStyle.value);
 const { title } = useNav();
 
 const ruleForm = reactive({
-  username: "admin",
-  password: "admin123",
+  username: "",
+  password: "",
   verifyCode: ""
 });
 
@@ -50,8 +51,11 @@ const onLogin = async (formEl: FormInstance | undefined) => {
     if (valid) {
       loading.value = true;
       useUserStoreHook()
-        .loginByUsername({ username: ruleForm.username, password: "admin123" })
-        .then(res => {
+        .loginByUsername({
+          username: ruleForm.username,
+          password: ruleForm.password
+        })
+        .then((res: UserResult) => {
           if (res.success) {
             return initRouter().then(() => {
               router.push(getTopMenu(true).path).then(() => {

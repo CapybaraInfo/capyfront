@@ -63,12 +63,12 @@ export const useUserStore = defineStore({
       this.verifyCode = verifyCode;
     },
     /** 登入 */
-    async loginByUsername(data) {
+    async loginByUsername(data: { username: string; password: string }) {
       return new Promise<UserResult>((resolve, reject) => {
         getLogin(data)
-          .then(data => {
-            if (data?.success) setToken(data.data);
-            resolve(data);
+          .then(res => {
+            if (res?.success) setToken(res.data);
+            resolve(res);
           })
           .catch(error => {
             reject(error);

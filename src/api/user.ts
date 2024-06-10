@@ -23,7 +23,7 @@ export type RefreshTokenResult = {
 };
 
 export type TokenResponse = {
-  readonly acessToken: string;
+  readonly accessToken: string;
   readonly refreshToken: string;
   readonly userData: UserData;
 };
@@ -51,12 +51,12 @@ export const getLogin = async (data?: object): Promise<UserResult> => {
   const result = await http.request<TokenResponse>("post", "/api/login", {
     data
   });
-  let jsonData = JSON.parse(atob(result.acessToken.split(".")[1]));
+  let jsonData = JSON.parse(atob(result.accessToken.split(".")[1]));
   let exp = jsonData.exp;
   return {
     success: true,
     data: {
-      accessToken: result.acessToken,
+      accessToken: result.accessToken,
       refreshToken: result.refreshToken,
       expires: new Date(exp * 1000),
       username: result.userData.username,

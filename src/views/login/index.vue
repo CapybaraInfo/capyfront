@@ -106,7 +106,7 @@ onBeforeUnmount(() => {
         <div class="login-form">
           <avatar class="avatar" />
           <Motion>
-            <h2 class="outline-none">Capy Consultório</h2>
+            <h2 class="outline-none">Capy Odonto</h2>
           </Motion>
 
           <el-form

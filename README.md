@@ -37,7 +37,7 @@ Pré-requisitos
 Antes de começar, você precisará ter o seguinte instalado em sua máquina:
 
 *   **Node.js 14+**
-*   **npm** ou **yarn**
+*   **pnpm** ou **yarn**
 
 Instalação
 ----------

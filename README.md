@@ -63,8 +63,9 @@ Contribuidores
 Agradecemos aos seguintes contribuidores pelo seu trabalho árduo:
 
 *   [@edertelhado](https://github.com/edertelhado)
-*   [@Carlos3108](https://github.com/mrfelipefarias)
-*   [@mrfelipefarias](https://github.com/Carlos3108)
+*   [@mrfelipefarias](https://github.com/mrfelipefarias)
+*   [@Carlos3108](https://github.com/Carlos3108)
+
 
 Backend
 -------

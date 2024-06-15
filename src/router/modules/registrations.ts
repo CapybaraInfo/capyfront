@@ -35,6 +35,33 @@ export default {
       ]
     },
     {
+      path: "/medicines",
+      meta: {
+        icon: "solar:pills-outline",
+        title: "Medicamentos"
+      },
+      children: [
+        {
+          path: "/unit",
+          name: "Unidade",
+          component: () => import("@/views/medicines/unit/index.vue"),
+          meta: {
+            title: "Unidade",
+            icon: "ph:eyedropper"
+          }
+        },
+        {
+          path: "/medicine",
+          name: "Medicamento",
+          component: () => import("@/views/medicines/index.vue"),
+          meta: {
+            title: "Medicamento",
+            icon: "ph:eyedropper"
+          }
+        }
+      ]
+    },
+    {
       path: "/error/404",
       name: "404",
       component: () => import("@/views/error/404.vue"),
